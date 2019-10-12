@@ -43,9 +43,8 @@ public class UserController {
         User user = new User();
         user.setId(dto.getId());
         user.setEmail(dto.getEmail());
-        user.setPassword(dto.getPassword());
-        user.setName(Bcrypt.getHash(dto.getName()));
-
+        user.setPassword(Bcrypt.getHash(dto.getPassword()));
+        user.setName(dto.getName());
         return user;
     }
 
@@ -54,8 +53,6 @@ public class UserController {
         dto.setId(user.getId());
         dto.setName(user.getName());
         dto.setEmail(user.getEmail());
-        dto.setPassword(user.getPassword());
-
         return dto;
     }
 }
