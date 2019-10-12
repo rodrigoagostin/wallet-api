@@ -9,6 +9,7 @@ import static javax.persistence.GenerationType.*;
 
 @Entity
 @Data
+@Table(name = "users")
 public class User implements Serializable {
 
     @Id
